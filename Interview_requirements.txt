@@ -1,0 +1,23 @@
+  Task
+
+Create a django application & Use Django ORM, Django Forms and validations
+
+>> Registration
+         - first name
+         - last name
+         - gender
+         - email (should be unique)
+         - phone (should be unique)
+         - city
+
+>> User login
+        - username
+        - password
+
+>> Customer Access
+          >> username and last logged in time  should be shown on the top right corner
+         <<Edit>>
+
+>> Admin Access
+       <<View>> <<Edit>> <<Delete>>
+        Admin had access to see the Customers, he can modify their details and he can delete users. 
