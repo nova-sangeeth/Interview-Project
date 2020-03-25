@@ -1,0 +1,9 @@
+This application is build using a Ubuntu System.
+
+commands:
+
+(cd into the directory):
+                        command: source env/bin/activate  (To activate the env)
+                        
+(cd into the src folder to run the app)
+
