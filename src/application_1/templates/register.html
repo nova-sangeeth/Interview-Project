@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}{% load crispy_forms_tags %}
+{% extends 'base.html' %} {% load crispy_forms_tags %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,13 +9,16 @@
   <body>
     {% block content %}
     <div class="container">
-      <form action="" method="post">
+      <form action="" method="post" autocomplete="off">
         {% csrf_token %} {{ form|crispy}}
         <center>
-          <button class="btn btn-success" type="submit">Login</button>
+          <button class="btn btn-success" type="submit">Register</button>
         </center>
       </form>
-      <a href="/register" class="btn btn-primary">register</a>
+    </div>
+    <div class="container">
+      already registered??
+      <a href="/login" class="btn btn-success">Login</a>
     </div>
     {% endblock content %}
   </body>

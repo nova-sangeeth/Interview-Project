@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>welcome</title>
+  </head>
+  <body>
+    {% block content %}
+    <nav class="navbar navbar-dark bg-light">
+      <p class="leads"style="text-align:">Last Login:</p>
+      {{user.last_login}}
+    </nav>
+    <div class="container">
+        <h1 class="display-4"></h1>
+      </div>
+    <div class="container">
+        <div class="alert alert-primary" role="alert">
+            <p>Username:{{user}}</p>
+            <p>Last login: {{user.last_login}}</p>
+            <p>Date_joined:{{user.date_joined}}</p>
+            <p>Is Admin:{{user.is_superuser}}</p>
+            <p>Email:{{user.email}}</p>
+        </div>
+   
+
+    <center>
+        <div class="container">
+            <a href="/logout" class="btn btn-success">Logout</a>
+          </div>
+    </center>
+
+    {% endblock content %}
+  </body>
+</html>

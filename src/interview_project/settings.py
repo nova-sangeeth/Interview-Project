@@ -68,6 +68,7 @@ TEMPLATES = [
         },
     },
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 WSGI_APPLICATION = 'interview_project.wsgi.application'
 

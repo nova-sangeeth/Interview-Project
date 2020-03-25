@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% block content %}
+    <div class="container">
+      <center>
+        <div class="container">
+          <h2>Thanks for visiting!!!</h2>
+        </div>
+        <div class="alert alert-primary" role="alert">
+          <div class="container">
+            <a href="/login" class="btn btn-success">Login</a>
+          </div>
+          <br />
+          <div class="container">
+            <a href="/register" class="btn btn-primary">register</a>
+          </div>
+        </div>
+      </center>
+    </div>
+    {% endblock content %}
+  </body>
+</html>

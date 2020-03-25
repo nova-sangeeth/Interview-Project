@@ -27,15 +27,19 @@
     <title>Base</title>
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Test Application.</h1>
-        <p class="lead">
-          This is a modified jumbotron that occupies the entire horizontal space
-          of its parent.
-        </p>
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <center>
+            <a href="/"<h1 class="display-4">Test Application.</h1></a>
+            <p class="lead">
+              Interview Test application.
+            </p>
+            <p>--------------------------------------------</p>
+          </center>
+        </div>
+        {% block content %} {% endblock content %}
       </div>
-      {% block content %} {% endblock content %}
     </div>
   </body>
 </html>
