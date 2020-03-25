@@ -8,6 +8,11 @@
   </head>
   <body>
     {% block content %}
+    <center>
+      <div class="container">
+        <h1 class="display-4">User Registeration</h1>
+      </div>
+    </center>
     <div class="container">
       <form action="" method="post" autocomplete="off">
         {% csrf_token %} {{ form|crispy}}
