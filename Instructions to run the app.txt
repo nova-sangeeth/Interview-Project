@@ -7,3 +7,8 @@ commands:
                         
 (cd into the src folder to run the app)
 
+
+
+DJANGO ADMIN DETAILS:
+        USERNAME: admin 
+        USER PASSWORD: 12345678
