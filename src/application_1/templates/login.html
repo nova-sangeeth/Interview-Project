@@ -12,12 +12,13 @@
       <h1 class="display-4">Customer Access</h1>
     </center>
     <div class="container">
-      <form action="" method="post">
+      <form action="" method="post" autocomplete="off">
         {% csrf_token %} {{ form|crispy}}
         <center>
           <button class="btn btn-success" type="submit">Login</button>
         </center>
       </form>
+      Not Yet Registered?
       <a href="/register" class="btn btn-primary">register</a>
     </div>
     {% endblock content %}

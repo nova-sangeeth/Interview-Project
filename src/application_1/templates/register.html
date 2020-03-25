@@ -14,17 +14,24 @@
       </div>
     </center>
     <div class="container">
-      <form action="" method="post" autocomplete="off">
+      <form method="post" autocomplete="off">
         {% csrf_token %} {{ form|crispy}}
         <center>
-          <button class="btn btn-success" type="submit">Register</button>
+          <button class="btn btn-success btn-block" type="submit">
+            Register
+          </button>
         </center>
       </form>
     </div>
-    <div class="container">
-      already registered??
-      <a href="/login" class="btn btn-success">Login</a>
-    </div>
+    <br />
+    <center>
+      <div class="container">
+        already registered??
+        <br />
+        <br />
+        <a href="/login" class="btn btn-primary ">Login</a>
+      </div>
+    </center>
     {% endblock content %}
   </body>
 </html>
