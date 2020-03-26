@@ -54,8 +54,19 @@ class EditUserForm(UserChangeForm):
             'password',
         )
 
-    def clean_password(self):
-        return self.initial["password"]
+    def save(self, commit=True):
+        if self.is_valid():
+            # Get instance with self.instance & only update if a value's changed:
+            for field_name in self.fields:
+                if getattr(self.instance, field_name) != self.cleaned_data[field_name]:
+                    setattr(self.instance, field_name,
+                            self.cleaned_data[field_name])
+                    self.instance.save()
+        return self.instance
+
+
+    # def clean_password(self):
+    #     return self.initial["password"]
 
     # def save(self, commit=True):
     #     user = super(usercreate, self).save(commit=False)

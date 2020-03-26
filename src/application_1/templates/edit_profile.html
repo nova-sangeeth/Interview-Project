@@ -8,8 +8,10 @@
   </head>
   <body>
     {% block content %} {{form|crispy}}
+    <br />
+    <a class="btn btn-secondary" href="/welcome"><-Back to Dashboard</a>
     <center>
-      <a class="btn btn-secondary" href="/edit_profile">edit</a>
+      <a class="btn btn-secondary" href="/edit_profile">Edit</a>
     </center>
     {% endblock content %}
   </body>

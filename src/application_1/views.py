@@ -68,6 +68,7 @@ def edit_profile(request):
         form = EditUserForm(data=request.POST, user=request.user)
         if form.is_valid():
             form.save()
+        else:
             return redirect('welcome')
     else:
         form = EditUserForm(instance=request.user)
