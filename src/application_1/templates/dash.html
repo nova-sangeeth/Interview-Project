@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load django_tables2 %} 
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,21 +13,67 @@
       <p class="leads"style="text-align:">Last Login:</p>
       {{user.last_login}}
     </nav>
-    <center>
-      <div class="container">
-        <h1 class="display-4">User Dashboard</h1>
-      </div>
-    </center>
-    <div class="container">
-        <div class="alert alert-primary" role="alert">
-            <p>Username:{{user}}</p>
-            <p>Last login: {{user.last_login}}</p>
-            <p>Date_joined:{{user.date_joined}}</p>
-            <p>Is Admin:{{user.is_superuser}}</p>
-            <p>Email:{{user.email}}</p>
+  
+      {% if user.username == "admin" %}
+      <center>
+        <div class="container">
+          <h1 class="display-4">Administration Dashboard</h1>
         </div>
-   
+      </center>
+      <div class="cointainer">
+        <dl class="row">
+          <dt class="col-sm-3">Username:</dt>
+          <dd class="col-sm-9">{{user}}</dd>
+          <dt class="col-sm-3 text-truncate">Last login</dt>
+          <dd class="col-sm-9">{{user.last_login}}</dd>
+          <dt class="col-sm-3">Date_Joined</dt>
+          <dd class="col-sm-9">{{user.email}}</dd>
+          <dt class="col-sm-3">SuperUser</dt>
+          <dd class="col-sm-9">{{user.is_superuser}}</dd>
+      </dl>
+      </div>
+      
+    <div class="container">
+      <a class="btn btn-primary btn-block" href="/showthis">show users</a>
+    </div>
+      
+      <br>
+      <a class="btn btn-primary btn-block" href="/admin/auth/user/">admin page</a>
 
+
+      {% else %}
+
+
+      <div class="container">
+        <h1 class="display-4">Hello {{user}}</h1>
+      </div>
+        
+      <div class="alert alert-primary" role="alert">
+        <dl class="row">
+          <dt class="col-sm-3">Username:</dt>
+          <dd class="col-sm-9">{{user}}</dd>
+          <dt class="col-sm-3 text-truncate">Last login</dt>
+          <dd class="col-sm-9">{{user.last_login}}</dd>
+          <dt class="col-sm-3">Date_Joined</dt>
+          <dd class="col-sm-9">{{user.email}}</dd>
+          <dt class="col-sm-3">SuperUser</dt>
+          <dd class="col-sm-9">{{user.is_superuser}}</dd>
+      </dl>
+        <a class=" btn btn-primary" href="/change_password">Change User Password</a>
+        </div>
+      <div>
+        
+      </div>
+      {% endif %}
+    
+
+    <div class="container">
+        
+             
+   <!-- <a class="btn btn-danger" href="/edit_profile">edit</a>
+   <br>
+   <a class="btn btn-danger" href="/change_password">edit-password</a> -->
+    <br>
     <center>
         <div class="container">
             <a href="/logout" class="btn btn-success">Logout</a>

@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm
 
 
 class usercreate(UserCreationForm):
@@ -32,6 +32,27 @@ class usercreate(UserCreationForm):
         user.city = self.cleaned_data["city"]
         user.gender = self.cleaned_data["gender"]
         user.phone = self.cleaned_data["phone"]
+
+        if commit:
+            user.save()
+        return user
+
+
+class EditProfileForm(UserChangeForm):
+    template_name = 'change_password.html'
+
+    class Meta:
+        model = User
+        fields = (
+            'email',
+            'first_name',
+            'last_name',
+            'password'
+        )
+
+    def save(self, commit=True):
+        user = super(usercreate, self).save(commit=False)
+        user.email = self.cleaned_data["email"]
 
         if commit:
             user.save()

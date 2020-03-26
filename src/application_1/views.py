@@ -1,12 +1,24 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .forms import usercreate
+from .forms import usercreate, EditProfileForm
+from django.contrib.auth.models import User
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from django.urls import reverse
+from django.contrib.auth import update_session_auth_hash, get_user_model
+from .table import UserTableList
 
 
 def welcome(request):
+
     return render(request, "dash.html")
+
+
+def showthis(request):
+    queryset = User.objects.all()
+    all_users = UserTableList(queryset)
+    return render(request, 'users_list.html', {'allusers': all_users})
 
 
 def index(request):
@@ -47,3 +59,29 @@ def logout(request):
     auth_logout(request)
     # else:
     return render(request, 'logout.html')
+
+
+def edit_profile(request):
+    if request.method == 'POST':
+        # form = EditProfileForm(request.POST, instance=request.user)
+        form = EditProfileForm(instance=request.user.userprofile)
+        if form.is_valid():
+            form.save()
+            return redirect('welcome')
+    else:
+        form = EditProfileForm(instance=request.user)
+        return render(request, 'edit_profile.html', {'form': form})
+
+
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect(reverse('welcome'))
+        else:
+            return redirect(reverse('change_password'))
+    else:
+        form = PasswordChangeForm(user=request.user)
+        return render(request, 'change_password.html', {'form': form})

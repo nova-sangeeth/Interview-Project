@@ -1,4 +1,4 @@
-#!/mnt/e/Projects-python and JavaScript/Interview-Project-django/env/bin/python
+#!/mnt/e/Projects-python and JavaScript/Interview-Project-django/Interview-Project/env/bin/python
 
 import sys
 import getopt

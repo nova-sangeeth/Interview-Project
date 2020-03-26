@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'suit',
+    'interview_project.apps.suitsconfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'application_1',
     'crispy_forms',
+    'django_tables2',
+
 ]
 
 MIDDLEWARE = [
@@ -69,6 +73,7 @@ TEMPLATES = [
     },
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 WSGI_APPLICATION = 'interview_project.wsgi.application'
 

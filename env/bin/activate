@@ -46,7 +46,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/mnt/e/Projects-python and JavaScript/Interview-Project-django/env"
+VIRTUAL_ENV="/mnt/e/Projects-python and JavaScript/Interview-Project-django/Interview-Project/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

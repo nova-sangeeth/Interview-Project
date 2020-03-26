@@ -8,17 +8,21 @@
   </head>
   <body>
     {% block content %}
-    <div class="alert alert-primary" role="alert">
-      <div class="container">
-        <center>
-          <a class="btn btn-primary" href="/login">login</a>
-          <a class="btn btn-success" href="/register">register</a>
-          <br />
-          <br />
-          <a class="btn btn-dark" href="/admin">admin</a>
-        </center>
-      </div>
+    <!-- <div class="alert alert-primary" role="alert"> -->
+    <div class="container">
+      <!-- <center> -->
+      <a class="btn btn-primary btn-block" href="/login">login</a>
+      <br />
+      <center>
+        <p class="leads">Not Yet Registered??</p>
+
+        <a class="btn btn-success" href="/register">register</a>
+      </center>
+
+      <!-- <a class="btn btn-dark" href="/admin">admin</a> -->
+      <!-- </center> -->
     </div>
+    <!-- </div> -->
     {% endblock content %}
   </body>
 </html>
