@@ -38,22 +38,29 @@ class usercreate(UserCreationForm):
         return user
 
 
-class EditProfileForm(UserChangeForm):
+class EditUserForm(UserChangeForm):
     template_name = 'change_password.html'
 
     class Meta:
         model = User
+        # fields = '__all__'
         fields = (
             'email',
             'first_name',
-            'last_name',
-            'password'
+            'last_name'
+            # 'password'
+        )
+        exclude = (
+            'password',
         )
 
-    def save(self, commit=True):
-        user = super(usercreate, self).save(commit=False)
-        user.email = self.cleaned_data["email"]
+    def clean_password(self):
+        return self.initial["password"]
 
-        if commit:
-            user.save()
-        return user
+    # def save(self, commit=True):
+    #     user = super(usercreate, self).save(commit=False)
+    #     user.email = self.cleaned_data["email"]
+
+    #     if commit:
+    #         user.save()
+    #     return user

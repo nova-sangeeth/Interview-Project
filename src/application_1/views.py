@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .forms import usercreate, EditProfileForm
+from .forms import usercreate, EditUserForm
 from django.contrib.auth.models import User
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import login as auth_login
@@ -64,12 +64,13 @@ def logout(request):
 def edit_profile(request):
     if request.method == 'POST':
         # form = EditProfileForm(request.POST, instance=request.user)
-        form = EditProfileForm(instance=request.user.userprofile)
+        # form = EditProfileForm(instance=request.user.userprofile)
+        form = EditUserForm(data=request.POST, user=request.user)
         if form.is_valid():
             form.save()
             return redirect('welcome')
     else:
-        form = EditProfileForm(instance=request.user)
+        form = EditUserForm(instance=request.user)
         return render(request, 'edit_profile.html', {'form': form})
 
 

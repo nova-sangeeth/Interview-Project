@@ -10,10 +10,8 @@
   <body>
     {% block content %}
     <nav class="navbar navbar-dark bg-light">
-      <p class="leads"style="text-align:">Last Login:</p>
-      {{user.last_login}}
+      Last Login: {{user.last_login}}
     </nav>
-  
       {% if user.username == "admin" %}
       <center>
         <div class="container">
@@ -59,24 +57,21 @@
           <dt class="col-sm-3">SuperUser</dt>
           <dd class="col-sm-9">{{user.is_superuser}}</dd>
       </dl>
-        <a class=" btn btn-primary" href="/change_password">Change User Password</a>
+        <div class="container">
+          <a class=" btn btn-secondary" href="/change_password">Change User Password</a>
+          <a class=" btn btn-secondary" href="/edit_profile">Change User details</a>
+        </div>
+        <br>
+       
         </div>
       <div>
-        
       </div>
       {% endif %}
-    
-
     <div class="container">
-        
-             
-   <!-- <a class="btn btn-danger" href="/edit_profile">edit</a>
-   <br>
-   <a class="btn btn-danger" href="/change_password">edit-password</a> -->
     <br>
     <center>
         <div class="container">
-            <a href="/logout" class="btn btn-success">Logout</a>
+            <a href="/logout" class="btn btn-warning">Logout</a>
           </div>
     </center>
 
