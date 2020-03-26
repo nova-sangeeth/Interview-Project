@@ -17,7 +17,7 @@
       <form method="post" autocomplete="off">
         {% csrf_token %} {{ form|crispy}}
         <center>
-          <button class="btn btn-success btn-block" type="submit">
+          <button class="btn btn-outline-success btn-block" type="submit">
             Register
           </button>
         </center>
@@ -29,7 +29,7 @@
         already registered??
         <br />
         <br />
-        <a href="/login" class="btn btn-primary ">Login</a>
+        <a href="/login" class="btn btn-outline-primary ">Login</a>
       </div>
     </center>
     {% endblock content %}
