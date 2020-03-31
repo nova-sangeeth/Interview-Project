@@ -86,6 +86,11 @@ class userprofile_form(forms.ModelForm):
 
 
 class customer_config_form(forms.ModelForm):
+    lan_ip = forms.GenericIPAddressField()
+    plan_start_date = forms.DateTimeField(widget=forms.SelectDateWidget)
+    plan_end_date = forms.DateTimeField(widget=forms.SelectDateWidget)
+    created_date = forms.DateTimeField(widget=forms.SelectDateWidget)
+
     class Meta:
         model = customer_configuration
         fields = ('lan_ip', 'organisation_name', 'plan_start_date',
