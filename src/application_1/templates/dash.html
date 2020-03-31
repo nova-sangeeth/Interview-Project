@@ -54,12 +54,27 @@
           <dd class="col-sm-9">{{user.last_login}}</dd>
           <dt class="col-sm-3">Date_Joined</dt>
           <dd class="col-sm-9">{{user.email}}</dd>
+          <dt class="col-sm-3">Gender</dt>
+          <dd class="col-sm-9">{{user.userprofilemodel.gender}}</dd>
           <dt class="col-sm-3">SuperUser</dt>
           <dd class="col-sm-9">{{user.is_superuser}}</dd>
+          <dt class="col-sm-3">Age</dt>
+          <dd class="col-sm-9">{{user.userprofilemodel.age}}</dd>
+          <dt class="col-sm-3">Address</dt>
+          <dd class="col-sm-9">{{user.userprofilemodel.address}}</dd>
+          <dt class="col-sm-3">country</dt>
+          <dd class="col-sm-9">{{user.userprofilemodel.country}}</dd>
+          <dt class="col-sm-3">city</dt>
+          <dd class="col-sm-9">{{user.userprofilemodel.city}}</dd>
+          <dt class="col-sm-3">Pincode</dt>
+          <dd class="col-sm-9">{{user.userprofilemodel.pincode}}</dd>
+
       </dl>
+      
         <div class="container">
           <a class=" btn btn-outline-secondary" href="/change_password">Change User Password</a>
           <a class=" btn btn-outline-secondary" href="/edit_profile">Change User details</a>
+          <a class=" btn btn-outline-secondary" href="/customer_config">Customer config</a>
         </div>
         <br>
        

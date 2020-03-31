@@ -21,3 +21,37 @@ Create a django application & Use Django ORM, Django Forms and validations
 >> Admin Access
        <<View>> <<Edit>> <<Delete>>
         Admin had access to see the Customers, he can modify their details and he can delete users. 
+
+
+
+
+
+
+        class and models fields:
+
+        customer id
+        user id
+        first name
+        last name
+        address
+        phone number
+        country
+        city 
+        pincode
+        modified date
+
+        customer configuration table
+        primary key
+        customer id
+        lan ip
+        organisation name
+        white list urls
+        black list urls
+        categories to block
+        countries to block
+        subscription type
+        plan start date
+        plan end date
+        current status
+        created date
+        last modified

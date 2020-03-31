@@ -8,6 +8,7 @@ from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.urls import reverse
 from django.contrib.auth import update_session_auth_hash, get_user_model
 from .table import UserTableList
+from .forms import userprofile_form, customer_config_form
 
 
 def welcome(request):
@@ -27,16 +28,22 @@ def index(request):
 
 def register(request):
     form = usercreate
+    profile_form = userprofile_form
     if request.method == "POST":
         form = usercreate(request.POST)
-        if form.is_valid():
+        profile_form = userprofile_form(request.POST)
+        if form.is_valid() and profile_form.is_valid():
             user = form.save()
+            profile = profile_form.save(commit=False)
+            profile.user = user
+            profile.save()
             auth_login(request, user)
             return redirect("welcome")
 
     else:
         form = usercreate()
-    return render(request, 'register.html', {'form': form})
+        profile_form = userprofile_form()
+    return render(request, 'register.html', {'form': form, 'profile_form': profile_form})
 
 
 def login(request):
@@ -87,3 +94,15 @@ def change_password(request):
     else:
         form = PasswordChangeForm(user=request.user)
         return render(request, 'change_password.html', {'form': form})
+
+
+def customer_config(request):
+    form = customer_config_form
+    if request.method == "POST":
+        form = customer_config_form(request.POST)
+        if form.is_valid():
+            customer = form.save()
+            return redirect("welcome")
+    else:
+        form = customer_config_form()
+    return render(request, 'Home.html', {'form': form})
