@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from .forms import usercreate, EditUserForm
 from django.contrib.auth.models import User
 from django.contrib.auth import logout as auth_logout
@@ -9,6 +9,7 @@ from django.urls import reverse
 from django.contrib.auth import update_session_auth_hash, get_user_model
 from .table import UserTableList
 from .forms import userprofile_form, customer_config_form
+from .models import UserProfileModel
 
 
 def welcome(request):
@@ -68,18 +69,18 @@ def logout(request):
     return render(request, 'logout.html')
 
 
-# def edit_profile(request):
-#     if request.method == 'POST':
-#         # form = EditProfileForm(request.POST, instance=request.user)
-#         # form = EditProfileForm(instance=request.user.userprofile)
-#         form = EditUserForm(data=request.POST, user=request.user)
-#         if form.is_valid():
-#             form.save()
-#         else:
-#             return redirect('welcome')
-#     else:
-#         form = EditUserForm(instance=request.user)
-#         return render(request, 'edit_profile.html', {'form': form})
+def edit_profile(request):
+    if request.method == 'POST':
+        # form = EditProfileForm(request.POST, instance=request.user)
+        # form = EditProfileForm(instance=request.user.userprofile)
+        form = EditUserForm(data=request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+        else:
+            return redirect('welcome')
+    else:
+        form = EditUserForm(instance=request.user)
+        return render(request, 'edit_profile.html', {'form': form})
 
 
 def change_password(request):
@@ -106,7 +107,7 @@ def customer_config(request):
             return redirect("welcome")
     else:
         form = customer_config_form()
-    return render(request, 'Home.html', {'form': form})
+    return render(request, 'add_config.html', {'form': form})
 
 
 def password_reset_confirmation(request):
