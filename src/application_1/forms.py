@@ -90,8 +90,10 @@ class customer_config_form(forms.ModelForm):
     plan_start_date = forms.DateTimeField(widget=forms.SelectDateWidget)
     plan_end_date = forms.DateTimeField(widget=forms.SelectDateWidget)
     created_date = forms.DateTimeField(widget=forms.SelectDateWidget)
+    last_modified = forms.DateTimeField(widget=forms.SelectDateWidget)
 
     class Meta:
         model = customer_configuration
-        fields = ('lan_ip', 'organisation_name', 'plan_start_date',
-                  'plan_end_date', 'current_status', 'created_date')
+        fields = '__all__'
+        # fields = ('lan_ip', 'organisation_name', 'plan_start_date',
+        #           'plan_end_date', 'current_status', 'created_date')
