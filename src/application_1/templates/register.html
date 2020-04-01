@@ -15,7 +15,7 @@
     </center>
     <div class="container">
       <form method="post" autocomplete="off">
-        {% csrf_token %} {{ form|crispy}}
+        {% csrf_token %} {{ form|crispy}} {{ profile_form|crispy}}
         <center>
           <button class="btn btn-outline-success btn-block" type="submit">
             Register

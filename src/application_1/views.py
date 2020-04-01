@@ -68,18 +68,18 @@ def logout(request):
     return render(request, 'logout.html')
 
 
-def edit_profile(request):
-    if request.method == 'POST':
-        # form = EditProfileForm(request.POST, instance=request.user)
-        # form = EditProfileForm(instance=request.user.userprofile)
-        form = EditUserForm(data=request.POST, user=request.user)
-        if form.is_valid():
-            form.save()
-        else:
-            return redirect('welcome')
-    else:
-        form = EditUserForm(instance=request.user)
-        return render(request, 'edit_profile.html', {'form': form})
+# def edit_profile(request):
+#     if request.method == 'POST':
+#         # form = EditProfileForm(request.POST, instance=request.user)
+#         # form = EditProfileForm(instance=request.user.userprofile)
+#         form = EditUserForm(data=request.POST, user=request.user)
+#         if form.is_valid():
+#             form.save()
+#         else:
+#             return redirect('welcome')
+#     else:
+#         form = EditUserForm(instance=request.user)
+#         return render(request, 'edit_profile.html', {'form': form})
 
 
 def change_password(request):
@@ -88,7 +88,8 @@ def change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            return redirect(reverse('welcome'))
+            return redirect(reverse('password_reset_confirmation'))
+
         else:
             return redirect(reverse('change_password'))
     else:
@@ -106,3 +107,7 @@ def customer_config(request):
     else:
         form = customer_config_form()
     return render(request, 'Home.html', {'form': form})
+
+
+def password_reset_confirmation(request):
+    return render(request, 'password_change_done.html')
