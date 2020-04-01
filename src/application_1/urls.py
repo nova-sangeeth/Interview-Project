@@ -15,16 +15,19 @@ urlpatterns = [
     url(r'^showthis/$', showthis, name="showthis"),
     url(r'^customer_config/$', customer_config, name="customer_config"),
 
-    url(r'^password_change/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'),
-        name='password_change_done'),
+
     url(r'^password_change/$', auth_views.PasswordChangeView.as_view(template_name='registration/password_change.html'),
         name='password_change'),
-    url(r'^password_reset/done/$', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
-        name='password_reset_done'),
+    url(r'^password_change/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'),
+        name='password_change_complete'),
+
+
+    url(r'password_reset/$', auth_views.PasswordResetView.as_view(),
+        name='password_reset'),
     url(r'^reset/<uidb64>/<token>/$', auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_done.html'),
         name='password_reset_confirm'),
-    url(r'password_reset/$', auth_views.PasswordResetView.as_view(template_name='registration/password_reset_form.html'),
-        name='password_reset'),
+    url(r'^password_reset/done/$', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
+        name='password_reset_done'),
     url(r'^reset/done/$', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
         name='password_reset_complete'),
 ]
