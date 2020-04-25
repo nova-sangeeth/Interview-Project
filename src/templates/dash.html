@@ -9,9 +9,9 @@
   </head>
   <body>
     {% block content %}
-    <nav class="navbar navbar-dark bg-light">
-      Last Login: {{user.last_login}}
-    </nav>
+    
+      
+  
       {% if user.username == "admin" %}
       <center>
         <div class="container">
@@ -31,7 +31,7 @@
       </dl>
       </div>
       
-    <div class="container">
+    <div class="  ">
       <a class="btn btn-outline-primary btn-block" href="/showthis">show users</a>
     </div>
       
@@ -74,7 +74,7 @@
       
         <div class="container">
           <a class=" btn btn-outline-secondary" href="/password_change">Change User Password</a>
-          <a class=" btn btn-outline-secondary" href="/edit_profile">Change User details</a>
+          <!-- <a class=" btn btn-outline-secondary" href="/edit_profile">Change User details</a> -->
           <a class=" btn btn-outline-secondary" href="/customer_config">Customer config</a> 
           <!-- <a class=" btn btn-outline-secondary" href="/edit_customer_config">edit Customer config</a>  -->
         </div>

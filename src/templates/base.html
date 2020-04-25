@@ -24,21 +24,36 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
     <title>Base</title>
   </head>
-  <body style="background-color:White;">
-  
+  <body style="background-color: White;">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/">User Management</a>
+    </nav>
+
     <div class="container">
-      <!-- <div class="jumbotron jumbotron-fluid"> -->
-        <!-- <div class="container"> -->
-          <center>
-            <a href="/"<h1 class="display-4">Test Application.</h1></a>
-           
-            <p>--------------------------------------------</p>
-          </center>
-        <!-- </div> -->
-        {% block content %} {% endblock content %}
-      <!-- </div> -->
+      {% block content %} {% endblock content %}
     </div>
   </body>
 </html>

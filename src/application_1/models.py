@@ -21,26 +21,8 @@ class UserProfileModel(models.Model):
     def __str__(self):
         return self.user.username
 
-    # def get_absolute_url(self):
-    #     return reverse('user_profile_edit', kwargs={'pk': self.pk})
-
-
-# class customer_configuration(models.Model):
-#     customer_id = models.OneToOneField(
-#         UserProfileModel, null=True, on_delete=models.CASCADE)
-#     lan_ip = models.GenericIPAddressField()
-#     organisation_name = models.CharField(null=True, max_length=128)
-#     plan_start_date = models.DateTimeField()
-#     plan_end_date = models.DateTimeField()
-#     current_status = models.BooleanField(default=True)
-#     created_date = models.DateTimeField()
-
-#     def __str__(self):
-#         return self.organisation_name
-
 
 class customer_configuration(models.Model):
-    # username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     customer_id = models.OneToOneField(
         User, on_delete=models.CASCADE, null=True)
     lan_IP = models.GenericIPAddressField(null=True)

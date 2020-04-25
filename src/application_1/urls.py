@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import register, welcome, login, logout, index,  change_password, showthis, password_reset_confirmation, edit_profile, customer_config
+from .views import register, welcome, login, logout, index,  change_password, showthis, password_reset_confirmation,  customer_config
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^welcome/$', welcome, name="welcome"),
     url(r'^login/$', login, name="login"),
     url(r'^logout/$', logout, name="logout"),
-    url(r'^edit_profile/$', edit_profile, name="edit_profile"),
+
     url(r'^change_password/$', change_password, name="change_password"),
     url(r'^password_reset_confirmation/$', password_reset_confirmation,
         name="password_reset_confirmation"),

@@ -69,18 +69,18 @@ def logout(request):
     return render(request, 'logout.html')
 
 
-def edit_profile(request):
-    if request.method == 'POST':
-        # form = EditProfileForm(request.POST, instance=request.user)
-        # form = EditProfileForm(instance=request.user.userprofile)
-        form = EditUserForm(data=request.POST, user=request.user)
-        if form.is_valid():
-            form.save()
-        else:
-            return redirect('welcome')
-    else:
-        form = EditUserForm(instance=request.user)
-        return render(request, 'edit_profile.html', {'form': form})
+# def edit_profile(request):
+#     if request.method == 'POST':
+#         # form = EditProfileForm(request.POST, instance=request.user)
+#         # form = EditProfileForm(instance=request.user.userprofile)
+#         form = EditUserForm(data=request.POST, user=request.user)
+#         if form.is_valid():
+#             form.save()
+#         else:
+#             return redirect('welcome')
+#     else:
+#         form = EditUserForm(instance=request.user)
+#         return render(request, 'edit_profile.html', {'form': form})
 
 
 def change_password(request):

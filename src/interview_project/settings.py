@@ -25,7 +25,7 @@ SECRET_KEY = 'vs^=0j@lkdpv#i-#uwh1+)fs59cyf%jj1+7r^&zx8m7x6p=q39'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '1d0435de.ngrok.io']
 
 
 # Application definition
@@ -71,6 +71,9 @@ TEMPLATES = [
             ],
         },
     },
+]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

@@ -9,13 +9,13 @@
   <body>
     {% block content %}
     <center>
-      <h1 class="display-4">Customer Access</h1>
+      <h1 class="display-3">Login</h1>
     </center>
-    <div class="container">
-      <form action="" method="post" autocomplete="off">
+    <div class="container" class="myform form" class="col-md-12 text-center">
+      <form class="form" method="post" autocomplete="off">
         {% csrf_token %} {{ form|crispy}}
         <center>
-          <button class="btn btn-outline-success btn-block" type="submit">
+          <button class="btn btn-outline-success" type="submit">
             Login
           </button>
         </center>
@@ -24,6 +24,7 @@
       <center>
         <p class="leads">Not Yet Registered??</p>
         <a href="/register" class="btn btn-outline-primary">register</a>
+        <br />
         <br />
         <p class="leads">Forgot Password?</p>
         <a href="/password_reset" class="btn btn-outline-primary">reset</a>

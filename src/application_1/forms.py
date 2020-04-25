@@ -94,6 +94,6 @@ class customer_config_form(forms.ModelForm):
 
     class Meta:
         model = customer_configuration
-        fields = '__all__'
-        # fields = ('lan_ip', 'organisation_name', 'plan_start_date',
-        #           'plan_end_date', 'current_status', 'created_date')
+
+        fields = ('lan_ip', 'organisation_name', 'plan_start_date',
+                  'plan_end_date', 'current_status', 'created_date')

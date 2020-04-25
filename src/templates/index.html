@@ -9,18 +9,23 @@
   <body>
     {% block content %}
     <!-- <div class="alert alert-primary" role="alert"> -->
-    <div class="container">
-      <!-- <center> -->
-      <a class="btn btn-outline-primary btn-block" href="/login">Login</a>
-      <br />
+    <br <br />
+    <div class="container" class="row h-100">
+      <div class="alert alert-light" role="alert">
+        <center>
+          <p class="display-3">Welcome</p>
+        </center>
+      </div>
       <center>
+        <a class="btn btn-outline-primary btn-block" href="/login">Login</a>
+        <br />
+
         <p class="leads">Not Yet Registered??</p>
 
         <a class="btn btn-outline-success" href="/register">Register</a>
-      </center>
 
-      <!-- <a class="btn btn-dark" href="/admin">admin</a> -->
-      <!-- </center> -->
+        <!-- <a class="btn btn-dark" href="/admin">admin</a> -->
+      </center>
     </div>
     <!-- </div> -->
     {% endblock content %}
