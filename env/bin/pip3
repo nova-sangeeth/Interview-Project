@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/mnt/e/Projects-python and JavaScript/Interview-Project-django/Interview-Project/env/bin/python3" "$0" "$@"
+'''exec' "/mnt/e/Projects-python and JavaScript/Interview-Project-django/Interview-Project/env/bin/python" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

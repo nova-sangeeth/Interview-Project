@@ -1,4 +1,4 @@
-#!/mnt/e/Projects-python and JavaScript/Interview-Project-django/Interview-Project/env/bin/python3
+#!/mnt/e/Projects-python and JavaScript/Interview-Project-django/Interview-Project/env/bin/python
 from django.core import management
 
 if __name__ == "__main__":
